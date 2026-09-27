@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="Ember.App.Pages.FirePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Background="Transparent">
+    <Grid Padding="16" RowSpacing="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Spacing="8">
+            <Button Content="Fields" Click="Mode_Click" Tag="card" />
+            <Button Content="JSON" Click="Mode_Click" Tag="json" />
+            <Button Content="Markdown" Click="Mode_Click" Tag="md" />
+            <Button Content="Copy" Click="Copy_Click" />
+            <TextBlock x:Name="Summary" VerticalAlignment="Center" />
+        </StackPanel>
+        <TextBox x:Name="Output" Grid.Row="1" AcceptsReturn="True" IsReadOnly="True" TextWrapping="Wrap" FontFamily="Consolas" FontSize="13" />
+    </Grid>
+</Page>

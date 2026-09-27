@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="Ember.App.Pages.EditorPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Background="Transparent">
+    <Grid Padding="16" ColumnSpacing="16">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="300" />
+        </Grid.ColumnDefinitions>
+        <Grid RowSpacing="8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <StackPanel x:Name="SectionBar" Orientation="Horizontal" Spacing="6" />
+            <TextBlock x:Name="Hint" Grid.Row="1" TextWrapping="Wrap" Opacity="0.75"
+                       Text="Lines starting with %include pull a library fragment. Fire expands them. Nothing is posted." />
+            <TextBox x:Name="Source" Grid.Row="2" AcceptsReturn="True" TextWrapping="Wrap"
+                     FontFamily="Consolas" FontSize="14" TextChanged="Source_TextChanged" />
+        </Grid>
+        <StackPanel Grid.Column="1" Spacing="10">
+            <TextBlock Text="Card" FontWeight="SemiBold" />
+            <NumberBox x:Name="AgeBox" Header="Age" Minimum="1" Maximum="99" SpinButtonPlacementMode="Inline" ValueChanged="Age_Changed" />
+            <TextBlock x:Name="BudgetText" TextWrapping="Wrap" />
+            <TextBlock Text="Required facts" FontWeight="SemiBold" Margin="0,8,0,0" />
+            <StackPanel x:Name="Facts" Spacing="4" />
+            <Button Content="Remove card" Click="Remove_Click" HorizontalAlignment="Left" />
+        </StackPanel>
+    </Grid>
+</Page>

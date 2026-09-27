@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="Ember.App.Pages.LibraryPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Background="Transparent">
+    <Grid Padding="16" ColumnSpacing="16">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="280" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid RowSpacing="8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" Spacing="6">
+                <Button Content="Engines" Click="Kind_Click" Tag="engines" />
+                <Button Content="People" Click="Kind_Click" Tag="npcs" />
+                <Button Content="Places" Click="Kind_Click" Tag="places" />
+            </StackPanel>
+            <ListView x:Name="Items" Grid.Row="1" SelectionChanged="Items_SelectionChanged" />
+        </Grid>
+        <ScrollViewer Grid.Column="1">
+            <TextBlock x:Name="Detail" TextWrapping="Wrap" FontSize="15" />
+        </ScrollViewer>
+    </Grid>
+</Page>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="Ember.App.Pages.ChecksPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Background="Transparent">
+    <ListView x:Name="Problems" Margin="16" />
+</Page>

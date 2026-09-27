@@ -1,0 +1,30 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - run: dotnet run --project src/Ember.Cli/Ember.Cli.csproj -c Release -- check
+      - run: dotnet test tests/Ember.Core.Tests/Ember.Core.Tests.csproj -c Release
+
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - run: powershell -File build-windows.ps1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ember-win-x64
+          path: src/Ember.App/bin/Release/net8.0-windows10.0.19041.0/win-x64/publish
